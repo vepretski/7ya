@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -23,12 +23,46 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Prepare Pages artifact
+        run: |
+          set -euo pipefail
+          rm -rf public
+          mkdir -p public
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='public' \
+            --exclude='*.zip' \
+            --exclude='.DS_Store' \
+            ./ public/
+
+          if [ ! -f public/index.html ]; then
+            cat > public/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <title>7YA Radar</title>
+            </head>
+            <body>
+              <h1>7YA Radar</h1>
+              <p>Deployment is healthy. Add site content to the repository root or configure the build output path.</p>
+            </body>
+          </html>
+          HTML
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: public
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
