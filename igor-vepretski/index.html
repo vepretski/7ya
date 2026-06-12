@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070809" />
+  <meta name="description" content="IGOR VEPRETSKI — TOTAL LIFE TREE. מהדורת V0 תיעודית מתפתחת: מסע מחרקוב אל העידן האלגוריתמי." />
+  <title>IGOR VEPRETSKI — TOTAL LIFE TREE</title>
+  <style>
+    :root{
+      --bg:#070809;
+      --bg-soft:#0b0d0f;
+      --panel:#111417;
+      --panel-2:#15191d;
+      --ink:#f1efe9;
+      --muted:#a6a8a8;
+      --faint:#74797c;
+      --line:#2b3034;
+      --orange:#d86b2b;
+      --orange-soft:#d86b2b22;
+      --cyan:#56c3d6;
+      --cyan-soft:#56c3d61c;
+      --shadow:0 24px 80px #0008;
+      --radius:24px;
+      --max:1240px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{margin:0;color:var(--ink);background:
+      linear-gradient(#ffffff05 1px,transparent 1px),
+      linear-gradient(90deg,#ffffff05 1px,transparent 1px),
+      radial-gradient(circle at 18% 0%,#56c3d612,transparent 28%),
+      radial-gradient(circle at 82% 8%,#d86b2b12,transparent 24%),
+      var(--bg);
+      background-size:34px 34px,34px 34px,auto,auto,auto;
+      font-family:Arial,"Noto Sans Hebrew",system-ui,sans-serif;
+      line-height:1.62;
+    }
+    a{color:inherit;text-decoration:none}
+    .shell{max-width:var(--max);margin:auto;padding:0 22px}
+    .topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff12;background:#070809d9;backdrop-filter:blur(18px)}
+    .topbar-inner{min-height:72px;display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center;direction:ltr;text-align:left}
+    .brand-mark{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;font-weight:900;letter-spacing:-1px;background:#0f1215;color:var(--cyan)}
+    .brand-title{font-size:14px;font-weight:900;letter-spacing:2px}
+    .brand-sub{display:block;font-size:11px;color:var(--faint);letter-spacing:1px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-start}
+    .nav a{font-size:12px;font-weight:800;color:var(--muted);padding:8px 10px;border:1px solid transparent}
+    .nav a:hover,.nav a:focus-visible{color:var(--ink);border-color:var(--line);outline:none;background:#ffffff06}
+    .hero{padding:96px 0 42px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:22px;align-items:stretch}
+    .panel{border:1px solid var(--line);background:#101316e8;box-shadow:var(--shadow);border-radius:var(--radius)}
+    .hero-copy{padding:38px;position:relative;overflow:hidden}
+    .hero-copy:before{content:"";position:absolute;inset:auto -80px -100px auto;width:260px;height:260px;border:1px solid #56c3d62a;border-radius:50%}
+    .eyebrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:11px;letter-spacing:2px;font-weight:900;color:var(--cyan);direction:ltr;justify-content:flex-end}
+    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px #d86b2baa}
+    h1{margin:18px 0 14px;direction:ltr;text-align:left;font-size:clamp(48px,8vw,102px);line-height:.88;letter-spacing:-5px;font-weight:1000}
+    h1 span{display:block;color:var(--orange)}
+    .hero-en{direction:ltr;text-align:left;font-size:18px;color:#d6d4ce;margin:0 0 24px;max-width:700px}
+    .hero-he{font-size:clamp(23px,3.4vw,38px);font-weight:900;line-height:1.15;margin:26px 0 8px}
+    .hero-he-sub{font-size:18px;color:var(--muted);max-width:740px}
+    .hero-side{padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+    .micro-label{color:var(--orange);font-size:11px;font-weight:900;letter-spacing:1.8px;direction:ltr;text-align:left}
+    .artifact-box{min-height:190px;display:grid;place-items:center;text-align:center;border:1px dashed #596168;background:
+      linear-gradient(135deg,#ffffff05 25%,transparent 25%) -12px 0/24px 24px,
+      linear-gradient(225deg,#ffffff05 25%,transparent 25%) -12px 0/24px 24px,
+      linear-gradient(315deg,#ffffff05 25%,transparent 25%) 0 0/24px 24px,
+      linear-gradient(45deg,#ffffff05 25%,transparent 25%) 0 0/24px 24px,
+      #0a0c0e;
+      color:#aeb4b7;font-size:13px;letter-spacing:1px;padding:18px
+    }
+    .side-note{font-size:13px;color:var(--muted);margin:0}
+    .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.7fr);gap:22px;padding:18px 0 54px}
+    .story{padding:30px}
+    h2{margin:0 0 12px;font-size:clamp(28px,4vw,48px);line-height:1.06;letter-spacing:-1.5px}
+    .en-title{direction:ltr;text-align:left;display:block;color:var(--cyan);font-size:12px;letter-spacing:2px;margin-bottom:10px}
+    .story p{font-size:19px;color:#dedcd6;margin:0}
+    .principles{padding:28px}
+    .principles ul{margin:12px 0 0;padding:0;list-style:none}
+    .principles li{padding:10px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .principles b{color:var(--ink)}
+    .section{padding:56px 0}
+    .section-head{display:flex;gap:20px;justify-content:space-between;align-items:end;margin-bottom:20px}
+    .section-head p{margin:0;color:var(--muted);max-width:620px}
+    .route{display:flex;gap:10px;align-items:center;overflow-x:auto;padding:22px 4px 16px;direction:ltr;scrollbar-color:var(--orange) transparent}
+    .node{flex:0 0 auto;min-width:128px;padding:16px 14px;border:1px solid var(--line);background:#101316;border-radius:16px;position:relative;text-align:left}
+    .node:after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--orange);font-weight:900}
+    .node:last-child:after{display:none}
+    .node b{display:block;color:var(--ink);font-size:14px}
+    .node span{display:block;color:var(--faint);font-size:11px;letter-spacing:1px;margin-top:7px}
+    .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .tile{min-height:164px;padding:20px;border:1px solid var(--line);background:#101316;border-radius:18px;display:flex;flex-direction:column;justify-content:space-between;transition:.18s ease}
+    .tile:hover{transform:translateY(-4px);border-color:#56c3d677;background:#14191c}
+    .tile small{color:var(--orange);font-size:11px;letter-spacing:1.7px;direction:ltr;text-align:left}
+    .tile b{font-size:20px}
+    .tile span{color:var(--muted);font-size:13px}
+    .evidence-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .status{border:1px solid var(--line);background:#0d1012;padding:16px;border-radius:14px;min-height:136px}
+    .status strong{display:block;font-size:12px;color:var(--cyan);direction:ltr;text-align:left;overflow-wrap:anywhere}
+    .status p{margin:12px 0 0;color:var(--muted);font-size:13px}
+    .archive-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .slot{min-height:220px;border:1px dashed #596168;background:#0b0d0f;display:grid;place-items:center;text-align:center;padding:18px;color:#9aa0a3;font-size:13px;letter-spacing:1px;position:relative}
+    .slot:before{content:"ARCHIVE / V0";position:absolute;top:12px;left:12px;color:var(--orange);font-size:10px;letter-spacing:1.5px}
+    .cta{padding:32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;border-color:#d86b2b66;background:linear-gradient(110deg,#17120f,#101316)}
+    .cta p{margin:6px 0 0;color:var(--muted)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:1px solid var(--cyan);color:#dffaff;background:var(--cyan-soft);font-weight:900;font-size:14px}
+    .button:hover,.button:focus-visible{background:#56c3d62f;outline:2px solid #56c3d655;outline-offset:3px}
+    footer{padding:34px 0 44px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;margin-top:60px}
+    .footer-inner{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap}
+    .ltr{direction:ltr;text-align:left}
+    @media(max-width:980px){.hero,.intro-grid{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,1fr)}.evidence-grid{grid-template-columns:repeat(2,1fr)}.archive-grid{grid-template-columns:1fr}.hero{padding-top:54px}.hero-copy{padding:26px}}
+    @media(max-width:620px){.topbar-inner{align-items:flex-start;padding:12px 0;flex-direction:column}.nav{gap:2px}.nav a{padding:6px 7px;font-size:11px}.tiles,.evidence-grid{grid-template-columns:1fr}.section{padding:40px 0}.cta{grid-template-columns:1fr}.story p{font-size:17px}h1{font-size:58px;letter-spacing:-3px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/" aria-label="חזרה לעמוד הראשי">
+        <div class="brand-mark">7YA</div>
+        <div><span class="brand-title">TOTAL LIFE TREE</span><span class="brand-sub">DOCUMENTARY DIGITAL BIOGRAPHY / V0</span></div>
+      </a>
+      <nav class="nav" aria-label="ניווט עמוד">
+        <a href="#opening">פתיחה</a>
+        <a href="#map">מפת חיים</a>
+        <a href="#chapters">פרקים</a>
+        <a href="#evidence">Evidence Wall</a>
+        <a href="#archive">ארכיון</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="opening">
+      <div class="panel hero-copy">
+        <div class="eyebrow"><i></i><span>PUBLIC-SAFE V0 / DOCUMENTARY EDITION IN PROGRESS</span></div>
+        <h1>IGOR<br><span>VEPRETSKI</span></h1>
+        <p class="hero-en">TOTAL LIFE TREE<br><strong>From Kharkiv to the Algorithmic Age</strong><br>A Documentary Digital Biography in Progress</p>
+        <div class="hero-he">איגור ופרצקי — עץ החיים המלא</div>
+        <div class="hero-he-sub">מסע תיעודי מחרקוב אל העידן האלגוריתמי</div>
+      </div>
+      <aside class="panel hero-side" aria-label="חלון ארכיון">
+        <div class="micro-label">OPENING SEQUENCE / ARCHIVE PLACEHOLDER</div>
+        <div class="artifact-box">[ARCHIVAL IMAGE REQUIRED]</div>
+        <p class="side-note">צילום אמיתי בלבד. אין שימוש בפורטרטים מלאכותיים או בהדמיות המתחזות לתיעוד.</p>
+      </aside>
+    </section>
+
+    <section class="intro-grid">
+      <article class="panel story">
+        <span class="en-title">DOCUMENTARY PREMISE</span>
+        <h2>הסיפור, הארכיון והמערכת</h2>
+        <p>איגור ופרצקי הוא הסיפור המרכזי. <span class="ltr">#7YA</span> הוא שכבת הארכיון, היצירה והריבונות הדיגיטלית. <span class="ltr">StartOn</span> הוא מפעל ההשפעה החברתי שמתרגם סיפור אישי למרחב עבור בני נוער.</p>
+      </article>
+      <aside class="panel principles">
+        <span class="en-title">EVIDENCE-FIRST PROMISE</span>
+        <h2>כלל הברזל</h2>
+        <ul>
+          <li><b>No inflated metrics.</b> ללא מספרים מנופחים.</li>
+          <li><b>No artificial portraits.</b> ללא תיעוד מלאכותי.</li>
+          <li><b>No private family details.</b> ללא חשיפת יתר.</li>
+          <li><b>Source status for major claims.</b> סטטוס מקור לכל טענה משמעותית.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section" id="map">
+      <div class="section-head">
+        <div><span class="en-title">LIFE MAP / V0</span><h2>מפת המסע</h2></div>
+        <p>מפת עבודה חזותית למהדורה המתפתחת. כל תחנה היא שער לארכיון, למסמך או לפרק שיתרחב לאחר בדיקת מקורות.</p>
+      </div>
+      <div class="route" aria-label="מפת חיים אופקית">
+        <div class="node"><b>Kharkiv</b><span>ORIGIN</span></div>
+        <div class="node"><b>Israel</b><span>MIGRATION</span></div>
+        <div class="node"><b>Bat Yam</b><span>FIRST HOME</span></div>
+        <div class="node"><b>Holon</b><span>FORMATIVE YEARS</span></div>
+        <div class="node"><b>Jessie Cohen</b><span>NEIGHBORHOOD</span></div>
+        <div class="node"><b>Service</b><span>THE TURN</span></div>
+        <div class="node"><b>Police</b><span>PUBLIC SERVICE</span></div>
+        <div class="node"><b>StartOn</b><span>SOCIAL SYSTEM</span></div>
+        <div class="node"><b>#7YA</b><span>DIGITAL ARCHIVE</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="chapters">
+      <div class="section-head">
+        <div><span class="en-title">BOOK ARCHITECTURE</span><h2>שכבות הקריאה</h2></div>
+        <p>העמוד הציבורי אינו מציג טענות שטרם אומתו. הוא בונה את המבנה שאליו ייכנסו בהדרגה טקסטים, מסמכים, צילומים וקישורי מדיה.</p>
+      </div>
+      <div class="tiles">
+        <div class="tile"><small>00 / OPENING SEQUENCE</small><b>07.07.1990</b><span>פתיחה קולנועית ומפת המסע.</span></div>
+        <div class="tile"><small>01 / THE FIRST MIGRATION</small><b>המעבר בין עולמות</b><span>ארכיון העלייה והבית הראשון.</span></div>
+        <div class="tile"><small>02 / JESSIE COHEN</small><b>השכונה</b><span>מקום, שייכות וזיכרון.</span></div>
+        <div class="tile"><small>03 / THE BOY BETWEEN SYSTEMS</small><b>בין מסגרות</b><span>חלונות ארכיון בבדיקת מקורות.</span></div>
+        <div class="tile"><small>04 / THE TURN</small><b>נקודת המפנה</b><span>המסלול מן הסיפור אל האחריות.</span></div>
+        <div class="tile"><small>09 / STARTON</small><b>המפעל החברתי</b><span>חזון, מבנה ועשייה מתועדת.</span></div>
+        <div class="tile"><small>12 / #7YA</small><b>שכבת הזהות הדיגיטלית</b><span>ארכיון, יצירה וריבונות דיגיטלית.</span></div>
+        <div class="tile"><small>14 / EVIDENCE WALL</small><b>קיר הראיות</b><span>מקורות, סטטוסים ופערים לבדיקה.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="section-head">
+        <div><span class="en-title">EVIDENCE WALL</span><h2>משמעת המקורות</h2></div>
+        <p>המהדורה מתפתחת בשכבות. סטטוס פנימי ברור מונע מערפל להפוך לעובדה ומאפשר להרחיב את הסיפור בלי לאבד דיוק.</p>
+      </div>
+      <div class="evidence-grid">
+        <div class="status"><strong>VERIFIED PUBLIC</strong><p>מקור ציבורי ברור שניתן לצטט ולפרסם.</p></div>
+        <div class="status"><strong>USER-SUPPLIED</strong><p>מידע שנמסר ישירות ודורש השלמת מקור חיצוני לפי ההקשר.</p></div>
+        <div class="status"><strong>PRIVATE SOURCE</strong><p>חומר פרטי לצורכי הארכיון הפנימי בלבד, אלא אם אושר אחרת.</p></div>
+        <div class="status"><strong>VERIFY BEFORE PUBLISHING</strong><p>פריט עבודה שאינו נכנס אוטומטית לגרסה הציבורית.</p></div>
+        <div class="status"><strong>CREATIVE RECONSTRUCTION</strong><p>שחזור ספרותי מסומן, שאינו מוצג כעובדה היסטורית.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="archive">
+      <div class="section-head">
+        <div><span class="en-title">ARCHIVE INTAKE / SAFE PLACEHOLDERS</span><h2>הארכיון החי</h2></div>
+        <p>המקומות הריקים אינם קישוט. הם מערכת קליטה. כל חומר עתידי ייכנס רק לאחר מיון, הרשאה ובדיקת שימוש ציבורי.</p>
+      </div>
+      <div class="archive-grid">
+        <div class="slot">[ARCHIVAL IMAGE REQUIRED]</div>
+        <div class="slot">[DOCUMENT SLOT]</div>
+        <div class="slot">[MEDIA SLOT]</div>
+      </div>
+    </section>
+
+    <section class="panel cta" aria-label="סטטוס מהדורה">
+      <div>
+        <span class="en-title">PUBLICATION STATUS</span>
+        <h2>מהדורת V0 נמצאת בבדיקת מקורות ובהרחבה הדרגתית.</h2>
+        <p>PDF edition: pending verified public release.</p>
+      </div>
+      <a class="button" href="/">חזרה לעמוד הראשי</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>IGOR VEPRETSKI — TOTAL LIFE TREE / PUBLIC-SAFE V0</span>
+      <span class="ltr">7YA.IO / DOCUMENTARY DIGITAL BIOGRAPHY</span>
+    </div>
+  </footer>
+</body>
+</html>
