@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7YA Member Pass</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .card {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 24px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
+    }
+    .card-header {
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #0ff;
+      margin-bottom: 16px;
+    }
+    .member-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+    .member-tier {
+      font-size: 18px;
+      color: #7fff00;
+      margin-bottom: 16px;
+    }
+    .member-since {
+      font-size: 12px;
+      color: #888;
+    }
+    .qr {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .qr img {
+      width: 128px;
+      height: 128px;
+    }
+  </style>
+</head>
+<body class="bg-dark text-light">
+  <div class="card">
+    <div class="card-header">#7YA Member Pass</div>
+    <div class="member-name" id="memberName">Member Name</div>
+    <div class="member-tier" id="memberTier">Tier</div>
+    <div class="member-since">Member Since <span id="memberSince">--/--</span></div>
+    <div>ID: <span id="memberId">7YA-000000</span></div>
+    <div class="qr">
+      <img id="qrImage" alt="QR Code" src="">
+    </div>
+  </div>
+
+  <script>
+    // Parse query parameters
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || 'Member';
+    const tier = params.get('tier') || 'Friend';
+    const memberId = params.get('memberId') || '7YA-000000';
+    const memberSince = params.get('since') || new Date().toISOString().slice(0,7);
+
+    document.getElementById('memberName').textContent = name.toUpperCase();
+    document.getElementById('memberTier').textContent = tier.toUpperCase();
+    document.getElementById('memberSince').textContent = memberSince;
+    document.getElementById('memberId').textContent = memberId;
+
+    // Generate QR code using external API (for demo)
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?data=https://7ya.io/verify/member/${memberId}&size=200x200`;
+    document.getElementById('qrImage').src = qrUrl;
+  </script>
+</body>
+</html>
