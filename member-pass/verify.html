@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Member</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark text-light">
+  <div class="content-container">
+    <h1>Member Verification</h1>
+    <div id="message">
+      <!-- verification message will be inserted here -->
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const memberId = params.get('memberId') || '';
+    const name = params.get('name') || '';
+    const tier = params.get('tier') || '';
+    const since = params.get('since') || '';
+
+    document.getElementById('message').innerHTML =
+      '<p>Verified #7YA Member</p>' +
+      '<p>Name: ' + name + '</p>' +
+      '<p>Tier: ' + tier + '</p>' +
+      '<p>Status: Active</p>' +
+      '<p>Since: ' + since + '</p>';
+  </script>
+</body>
+</html>
