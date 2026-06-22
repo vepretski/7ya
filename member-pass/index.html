@@ -16,6 +16,15 @@
     <p>Join the movement and claim your digital 7YA Member Pass. This pass grants you access to our community, status, and rewards.</p>
     <a href="member.html?name=Igor%20Vepretski&amp;tier=Builder&amp;memberId=7YA-000777" class="btn">View Your Pass</a>
   </div>
-  <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const animation = document.getElementById('animation');
+    const content = document.getElementById('content');
+    setTimeout(() => {
+      animation.style.display = 'none';
+      content.classList.remove('hidden');
+    }, 5000);
+  });
+  </script>
 </body>
 </html>
