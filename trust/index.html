@@ -4,261 +4,44 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>7YA Trust & Evidence Brief</title>
-  <meta name="description" content="7YA Trust & Evidence Brief: an evidence-first public trust page for Igor Vepretski and 7YA, with verified claims, status labels, and responsible publication rules." />
+  <meta name="description" content="7YA Trust & Evidence Brief: evidence-powered public identity for Igor Vepretski and 7YA, built with verified claims, transparent status labels, and disciplined public positioning." />
   <link rel="canonical" href="https://7ya.io/trust/" />
   <meta property="og:title" content="7YA Trust & Evidence Brief" />
-  <meta property="og:description" content="Evidence-first public trust page for Igor Vepretski and 7YA: verified claims, transparent status labels, and responsible public positioning." />
+  <meta property="og:description" content="Evidence-powered public trust page for Igor Vepretski and 7YA: strong positioning, verified claims, transparent status labels, and responsible publication rules." />
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://7ya.io/trust/" />
   <meta name="theme-color" content="#06070a" />
   <style>
-    :root{
-      color-scheme:dark light;
-      --bg:#06070a;--panel:#11141af2;--panel2:#151a22;--ink:#f7f4ec;--muted:#a9adb4;--faint:#747b85;
-      --line:#29313c;--cyan:#53d6ff;--gold:#d6b36a;--green:#20d48b;--orange:#ff7a30;--red:#ff5c6f;
-      --shadow:0 28px 90px #0008;--radius:26px;--max:1160px
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--bg)}
-    body{margin:0;color:var(--ink);font-family:Inter,Arial,"Noto Sans Hebrew",system-ui,sans-serif;line-height:1.62;background:radial-gradient(circle at 12% 0,#53d6ff18,transparent 28%),radial-gradient(circle at 88% 8%,#d6b36a18,transparent 26%),linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px),var(--bg);background-size:auto,auto,36px 36px,36px 36px,auto}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:auto;padding:0 20px}
-    .top{position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff12;background:#06070add;backdrop-filter:blur(18px)}
-    .topin{min-height:74px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px}
-    .mark{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;border:1px solid var(--line);background:#0e1218;color:var(--cyan);font-weight:1000;box-shadow:0 16px 44px #53d6ff1a}
-    .brand b{display:block;font-size:14px;letter-spacing:2px}
-    .brand small{display:block;color:var(--faint);font-size:11px;letter-spacing:1px}
-    .nav{display:flex;gap:8px;flex-wrap:wrap}
-    .nav a{font-size:12px;font-weight:900;color:var(--muted);padding:8px 10px;border:1px solid transparent;border-radius:999px}
-    .nav a:hover,.nav a[aria-current="page"],.nav a:focus-visible{color:var(--ink);border-color:var(--line);background:#ffffff08;outline:none}
-    .hero{padding:78px 0 34px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:stretch}
-    .panel,.card{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .heroMain{padding:38px}
-    .heroSide{padding:24px;display:grid;gap:14px}
-    .kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid #53d6ff44;background:#53d6ff12;color:#dbf7ff;border-radius:999px;padding:7px 11px;font-weight:950;font-size:12px;letter-spacing:1px}
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green)}
-    h1{margin:18px 0 14px;font-size:clamp(42px,7.4vw,82px);line-height:.92;letter-spacing:-3px}
-    h1 span{color:var(--gold)}
-    h2{font-size:clamp(27px,4vw,44px);line-height:1.04;margin:0 0 10px;letter-spacing:-1px}
-    h3{margin:0 0 8px;font-size:20px}
-    .lead{font-size:clamp(18px,2.1vw,23px);color:#dedbd3;max-width:760px}
-    .muted{color:var(--muted)}
-    .micro{font-size:13px;color:var(--faint)}
-    .section{padding:38px 0}
-    .head{display:flex;gap:18px;justify-content:space-between;align-items:end;margin-bottom:18px}
-    .head p{max-width:660px;margin:0;color:var(--muted)}
-    .eyebrow{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:1000;text-transform:uppercase}
-    .grid{display:grid;gap:14px}
-    .two{grid-template-columns:1fr 1fr}
-    .cards{grid-template-columns:repeat(3,1fr)}
-    .labels{grid-template-columns:repeat(5,1fr)}
-    .card{padding:20px;min-height:156px;display:flex;flex-direction:column;justify-content:space-between}
-    .card small{color:var(--orange);font-weight:1000;letter-spacing:1.4px;font-size:11px;text-transform:uppercase}
-    .card b{font-size:21px}
-    .card span,.card p{font-size:14px;color:var(--muted)}
-    .metric{border:1px solid var(--line);background:#0c1015;border-radius:18px;padding:16px}
-    .metric strong{display:block;color:var(--cyan);font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
-    .metric p{margin:8px 0 0;color:var(--muted);font-size:14px}
-    .statusLabel{min-height:178px}
-    .statusLabel.verified small{color:var(--green)}
-    .statusLabel.visible small{color:var(--cyan)}
-    .statusLabel.pending small{color:var(--gold)}
-    .statusLabel.internal small{color:#b7a8ff}
-    .statusLabel.private small{color:var(--red)}
-    .rule{border:1px solid #20d48b66;background:#20d48b12;color:#dfffee;border-radius:22px;padding:22px;font-weight:900;font-size:clamp(18px,2vw,24px)}
-    .founderNote{border:1px solid #d6b36a66;background:linear-gradient(135deg,#d6b36a13,#53d6ff0a);position:relative;overflow:hidden}
-    .founderNote:before{content:"IV";position:absolute;right:24px;top:14px;color:#ffffff08;font-size:118px;font-weight:1000;letter-spacing:-8px;line-height:1}
-    .signature{margin-top:18px;color:var(--gold);font-weight:1000;letter-spacing:.4px}
-    .noPublish{border:1px solid #ff5c6f55;background:#ff5c6f10;border-radius:22px;padding:20px}
-    .list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 0;padding:0;list-style:none}
-    .list li{border:1px solid var(--line);background:#0c1015;border-radius:16px;padding:13px;color:var(--muted)}
-    .cta{display:flex;justify-content:space-between;gap:18px;align-items:center;border:1px solid #d6b36a66;background:linear-gradient(135deg,#d6b36a18,#53d6ff0c);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
-    .ctaBar{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border-radius:14px;border:1px solid #53d6ff77;background:#53d6ff17;color:#e6fbff;font-weight:1000}
-    .btn.alt{border-color:#d6b36a88;background:#d6b36a17;color:#fff6dd}
-    .btn.ghost{border-color:var(--line);background:#ffffff06;color:var(--muted)}
-    .btn:hover,.btn:focus-visible{outline:2px solid #53d6ff55;outline-offset:3px}
-    .footer{border-top:1px solid var(--line);padding:28px 0 42px;margin-top:48px;color:var(--faint);font-size:13px}
-    .footin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .rtl{direction:rtl;text-align:right}
-    @media(prefers-color-scheme:light){
-      :root{--bg:#f7f4ec;--panel:#ffffffee;--panel2:#f2efe7;--ink:#11141a;--muted:#4b5563;--faint:#6b7280;--line:#d8d2c6;--shadow:0 22px 70px #11182718}
-      body{background:radial-gradient(circle at 12% 0,#53d6ff22,transparent 28%),radial-gradient(circle at 88% 8%,#d6b36a25,transparent 26%),linear-gradient(#11182708 1px,transparent 1px),linear-gradient(90deg,#11182708 1px,transparent 1px),var(--bg);background-size:auto,auto,36px 36px,36px 36px,auto}
-      .top{background:#f7f4ecdd}.mark,.metric,.list li{background:#fff}.lead{color:#2f343b}.nav a:hover,.nav a[aria-current="page"]{background:#11182708}.founderNote:before{color:#11182708}
-    }
-    @media(max-width:980px){.hero,.two,.cards,.labels{grid-template-columns:1fr}.hero{padding-top:46px}.heroMain{padding:28px}.head{display:block}.cta{display:block}.ctaBar{margin-top:16px}.list{grid-template-columns:1fr}.topin{padding:12px 0;align-items:flex-start}.nav{width:100%}.founderNote:before{font-size:86px;right:16px}}
-    @media(max-width:620px){h1{font-size:50px;letter-spacing:-2px}.nav a{font-size:11px;padding:6px 8px}.section{padding:32px 0}.card{min-height:136px}}
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+    :root{color-scheme:dark light;--bg:#06070a;--panel:#11141af2;--ink:#f7f4ec;--muted:#a9adb4;--faint:#747b85;--line:#29313c;--cyan:#53d6ff;--gold:#d6b36a;--green:#20d48b;--orange:#ff7a30;--red:#ff5c6f;--violet:#b7a8ff;--shadow:0 28px 90px #0008;--radius:26px;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;color:var(--ink);font-family:Inter,Arial,"Noto Sans Hebrew",system-ui,sans-serif;line-height:1.62;background:radial-gradient(circle at 12% 0,#53d6ff18,transparent 28%),radial-gradient(circle at 88% 8%,#d6b36a18,transparent 26%),linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px),var(--bg);background-size:auto,auto,36px 36px,36px 36px,auto}a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 20px}.top{position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff12;background:#06070add;backdrop-filter:blur(18px)}.topin{min-height:74px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;border:1px solid var(--line);background:#0e1218;color:var(--cyan);font-weight:1000;box-shadow:0 16px 44px #53d6ff1a}.brand b{display:block;font-size:14px;letter-spacing:2px}.brand small{display:block;color:var(--faint);font-size:11px;letter-spacing:1px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{font-size:12px;font-weight:900;color:var(--muted);padding:8px 10px;border:1px solid transparent;border-radius:999px}.nav a:hover,.nav a[aria-current="page"],.nav a:focus-visible{color:var(--ink);border-color:var(--line);background:#ffffff08;outline:none}.hero{padding:78px 0 34px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:stretch}.panel,.card{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);box-shadow:var(--shadow)}.heroMain{padding:38px}.heroSide{padding:24px;display:grid;gap:14px}.kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid #53d6ff44;background:#53d6ff12;color:#dbf7ff;border-radius:999px;padding:7px 11px;font-weight:950;font-size:12px;letter-spacing:1px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green)}h1{margin:18px 0 14px;font-size:clamp(44px,7.6vw,88px);line-height:.9;letter-spacing:-3px}h1 span{color:var(--gold)}h2{font-size:clamp(27px,4vw,44px);line-height:1.04;margin:0 0 10px;letter-spacing:-1px}h3{margin:0 0 8px;font-size:20px}.lead{font-size:clamp(18px,2.1vw,23px);color:#dedbd3;max-width:780px}.muted{color:var(--muted)}.section{padding:38px 0}.head{display:flex;gap:18px;justify-content:space-between;align-items:end;margin-bottom:18px}.head p{max-width:660px;margin:0;color:var(--muted)}.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:1000;text-transform:uppercase}.grid{display:grid;gap:14px}.cards{grid-template-columns:repeat(3,1fr)}.labels{grid-template-columns:repeat(5,1fr)}.read{grid-template-columns:repeat(3,1fr)}.card{padding:20px;min-height:156px;display:flex;flex-direction:column;justify-content:space-between}.card small{color:var(--orange);font-weight:1000;letter-spacing:1.4px;font-size:11px;text-transform:uppercase}.card b{font-size:21px}.card span,.card p{font-size:14px;color:var(--muted)}.metric{border:1px solid var(--line);background:#0c1015;border-radius:18px;padding:16px}.metric strong{display:block;color:var(--cyan);font-size:12px;letter-spacing:1.5px;text-transform:uppercase}.metric p{margin:8px 0 0;color:var(--muted);font-size:14px}.founder{border:1px solid #d6b36a66;background:linear-gradient(135deg,#d6b36a18,#53d6ff08);border-radius:26px;padding:28px;display:grid;grid-template-columns:minmax(0,.72fr) minmax(260px,.28fr);gap:18px;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.founder:before{content:"IV";position:absolute;right:24px;top:10px;color:#ffffff08;font-size:124px;font-weight:1000;letter-spacing:-8px;line-height:1}.principle{font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.8px;margin:0}.sig{border:1px solid var(--line);border-radius:22px;padding:18px;background:#0c1015;position:relative}.sig b{display:block;font-size:26px}.sig span{display:block;color:var(--muted);margin-top:4px}.statusLabel{min-height:178px}.statusLabel.verified small{color:var(--green)}.statusLabel.visible small{color:var(--cyan)}.statusLabel.pending small{color:var(--gold)}.statusLabel.internal small{color:var(--violet)}.statusLabel.private small{color:var(--red)}.rule{border:1px solid #20d48b66;background:#20d48b12;color:#dfffee;border-radius:22px;padding:22px;font-weight:900;font-size:clamp(18px,2vw,24px)}.noPublish{border:1px solid #ff5c6f55;background:#ff5c6f10;border-radius:22px;padding:20px}.list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 0;padding:0;list-style:none}.list li{border:1px solid var(--line);background:#0c1015;border-radius:16px;padding:13px;color:var(--muted)}.intake{display:grid;grid-template-columns:minmax(0,.95fr) minmax(280px,.65fr);gap:14px}.steps{counter-reset:step;display:grid;gap:10px;margin:0;padding:0;list-style:none}.steps li{counter-increment:step;border:1px solid var(--line);background:#0c1015;border-radius:18px;padding:15px;color:var(--muted)}.steps li:before{content:counter(step);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:999px;background:#53d6ff17;border:1px solid #53d6ff55;color:#dbf7ff;font-weight:1000;margin-right:8px}.cta{display:flex;justify-content:space-between;gap:18px;align-items:center;border:1px solid #d6b36a66;background:linear-gradient(135deg,#d6b36a18,#53d6ff0c);border-radius:28px;padding:24px;box-shadow:var(--shadow)}.ctaBar{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border-radius:14px;border:1px solid #53d6ff77;background:#53d6ff17;color:#e6fbff;font-weight:1000}.btn.alt{border-color:#d6b36a88;background:#d6b36a17;color:#fff6dd}.btn.ghost{border-color:var(--line);background:#ffffff06;color:var(--muted)}.btn:hover,.btn:focus-visible{outline:2px solid #53d6ff55;outline-offset:3px}.footer{border-top:1px solid var(--line);padding:28px 0 42px;margin-top:48px;color:var(--faint);font-size:13px}.footin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.rtl{direction:rtl;text-align:right}@media(prefers-color-scheme:light){:root{--bg:#f7f4ec;--panel:#ffffffee;--ink:#11141a;--muted:#4b5563;--faint:#6b7280;--line:#d8d2c6;--shadow:0 22px 70px #11182718}body{background:radial-gradient(circle at 12% 0,#53d6ff22,transparent 28%),radial-gradient(circle at 88% 8%,#d6b36a25,transparent 26%),linear-gradient(#11182708 1px,transparent 1px),linear-gradient(90deg,#11182708 1px,transparent 1px),var(--bg);background-size:auto,auto,36px 36px,36px 36px,auto}.top{background:#f7f4ecdd}.mark,.metric,.sig,.list li,.steps li{background:#fff}.lead{color:#2f343b}.nav a:hover,.nav a[aria-current="page"]{background:#11182708}.founder:before{color:#11182708}}@media(max-width:980px){.hero,.cards,.labels,.read,.founder,.intake{grid-template-columns:1fr}.hero{padding-top:46px}.heroMain{padding:28px}.head{display:block}.cta{display:block}.ctaBar{margin-top:16px}.list{grid-template-columns:1fr}.topin{padding:12px 0;align-items:flex-start}.nav{width:100%}.founder:before{font-size:86px;right:16px}}@media(max-width:620px){h1{font-size:50px;letter-spacing:-2px}.nav a{font-size:11px;padding:6px 8px}.section{padding:32px 0}.card{min-height:136px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
   </style>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://7ya.io/#organization",
-        "name": "7YA",
-        "url": "https://7ya.io/",
-        "description": "7YA is a public evidence layer and digital identity system focused on verified claims, status labels, and responsible public positioning."
-      },
-      {
-        "@type": "Person",
-        "@id": "https://7ya.io/igor-vepretski/#person",
-        "name": "Igor Vepretski",
-        "url": "https://7ya.io/igor-vepretski/",
-        "description": "Igor Vepretski is associated with public safety background, criminology, digital strategy, and the StartOn youth-at-risk mission."
-      },
-      {
-        "@type": "ProfilePage",
-        "@id": "https://7ya.io/trust/#profilepage",
-        "url": "https://7ya.io/trust/",
-        "name": "7YA Trust & Evidence Brief",
-        "description": "Evidence-first public trust page for Igor Vepretski and 7YA.",
-        "about": {"@id": "https://7ya.io/#organization"},
-        "mainEntity": {"@id": "https://7ya.io/igor-vepretski/#person"}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://7ya.io/#organization","name":"7YA","url":"https://7ya.io/","description":"7YA is a public evidence layer and digital identity system focused on verified claims, status labels, and responsible public positioning."},{"@type":"Person","@id":"https://7ya.io/igor-vepretski/#person","name":"Igor Vepretski","url":"https://7ya.io/igor-vepretski/","description":"Igor Vepretski is associated with public safety background, criminology, digital strategy, and the StartOn youth-at-risk mission."},{"@type":"ProfilePage","@id":"https://7ya.io/trust/#profilepage","url":"https://7ya.io/trust/","name":"7YA Trust & Evidence Brief","description":"Evidence-powered public trust page for Igor Vepretski and 7YA.","about":{"@id":"https://7ya.io/#organization"},"mainEntity":{"@id":"https://7ya.io/igor-vepretski/#person"}}]}
   </script>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap topin">
-      <a class="brand" href="/go/" aria-label="7YA command hub">
-        <div class="mark">7YA</div>
-        <div><b>TRUST BRIEF</b><small>EVIDENCE BEFORE CLAIMS</small></div>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="/go/">Go</a>
-        <a href="/starton/">StartOn</a>
-        <a href="/evidence/">Evidence</a>
-        <a href="/press/">Press</a>
-        <a href="/trust/" aria-current="page">Trust</a>
-      </nav>
-    </div>
-  </header>
-
+  <header class="top"><div class="wrap topin"><a class="brand" href="/go/" aria-label="7YA command hub"><div class="mark">7YA</div><div><b>TRUST BRIEF</b><small>POWER WITH PROOF</small></div></a><nav class="nav" aria-label="Primary navigation"><a href="/go/">Go</a><a href="/starton/">StartOn</a><a href="/evidence/">Evidence</a><a href="/press/">Press</a><a href="/trust/" aria-current="page">Trust</a></nav></div></header>
   <main class="wrap">
-    <section class="hero">
-      <div class="panel heroMain">
-        <span class="kicker"><i class="dot"></i> PUBLIC TRUST / 7YA</span>
-        <h1>7YA Trust<br><span>&amp; Evidence Brief</span></h1>
-        <p class="lead">7YA is an evidence-first digital identity and public trust system.</p>
-        <p class="muted">Built around verified claims, transparent status labels, and responsible public positioning.</p>
-        <div class="ctaBar">
-          <a class="btn" href="/evidence/">View evidence archive</a>
-          <a class="btn ghost" href="/press/">Open press kit</a>
-        </div>
-      </div>
-      <aside class="panel heroSide" aria-label="Trust principles">
-        <div class="metric"><strong>Evidence-first</strong><p>Public claims are separated by verification status, not by narrative convenience.</p></div>
-        <div class="metric"><strong>Public-safe</strong><p>Private details, sensitive identifiers, and non-public material stay out of publication.</p></div>
-        <div class="metric"><strong>No inflated claims</strong><p>Metrics, partnerships, affiliations, and achievements require a source before public use.</p></div>
-      </aside>
-    </section>
+    <section class="hero"><div class="panel heroMain"><span class="kicker"><i class="dot"></i> PUBLIC TRUST / 7YA</span><h1>Power<br><span>with proof.</span></h1><p class="lead">7YA is an evidence-first digital identity and public trust system.</p><p class="muted">Built around verified claims, transparent status labels, and responsible public positioning. The goal is not to shrink Igor Vepretski’s public identity — it is to make strong positioning credible.</p><div class="ctaBar"><a class="btn alt" href="#request-verification">Request verification</a><a class="btn" href="/evidence/">View evidence archive</a><a class="btn ghost" href="/press/">Open press kit</a></div></div><aside class="panel heroSide" aria-label="Trust principles"><div class="metric"><strong>No bluff</strong><p>No fake metrics, invented partnerships, rumors, or unsupported achievements.</p></div><div class="metric"><strong>Full force</strong><p>Verified facts are written clearly, strongly, and with institutional confidence.</p></div><div class="metric"><strong>Public-safe</strong><p>Private details, sensitive identifiers, and non-public material stay out of publication.</p></div></aside></section>
 
-    <section class="section" id="founder-note">
-      <div class="panel heroMain founderNote">
-        <span class="eyebrow">Founder note</span>
-        <h2>Why this page exists</h2>
-        <p class="lead">7YA was built to separate public truth from noise.</p>
-        <p class="muted">The rule is simple: if a claim cannot be verified, it does not become a public fact. Public trust is not a slogan; it is an operating discipline.</p>
-        <p class="signature">Igor Vepretski · 7YA</p>
-      </div>
-    </section>
+    <section class="section" id="founder-standard"><div class="founder"><div><span class="eyebrow">Founder standard</span><p class="principle">No bluff. No weakness. Strong public identity, backed by evidence.</p><p class="muted">7YA exists to separate public truth from noise and to give verified work the strongest possible public frame — without crossing into exaggeration.</p></div><aside class="sig"><b>Igor Vepretski</b><span>Public safety background • Criminology • Digital strategy • StartOn youth-at-risk mission</span></aside></div></section>
 
-    <section class="section" id="igor">
-      <div class="head">
-        <div><span class="eyebrow">Public profile</span><h2>Who is Igor Vepretski</h2></div>
-        <p>Short profile for public context only. It avoids private biography, unsupported metrics, and exaggerated positioning.</p>
-      </div>
-      <div class="panel heroMain">
-        <p class="lead">Igor Vepretski is a public-facing digital strategist and social-impact builder with a background in Israeli public safety, criminology, and digital positioning.</p>
-        <p class="muted">His public work is connected to 7YA and to StartOn, a youth-at-risk mission focused on creating practical technology pathways, credibility, and opportunity for young people who need structured support.</p>
-      </div>
-    </section>
+    <section class="section" id="trust-read"><div class="head"><div><span class="eyebrow">30-second trust read</span><h2>What the user should feel</h2></div><p>The experience should be premium and assertive, but every strong sentence must still survive verification.</p></div><div class="grid read"><article class="card"><small>1 / Person</small><b>Igor is visible</b><span>Not overexposed, not hidden. A real public figure with a clear standard.</span></article><article class="card"><small>2 / System</small><b>7YA has method</b><span>Claims move through labels, evidence, source quality, and publication readiness.</span></article><article class="card"><small>3 / Authority</small><b>The tone is confident</b><span>Trust does not mean apologizing. It means saying only what can stand.</span></article></div></section>
 
-    <section class="section" id="what-7ya-does">
-      <div class="head">
-        <div><span class="eyebrow">Operating layer</span><h2>What 7YA does</h2></div>
-        <p>7YA is designed as a trust infrastructure, not a hype page.</p>
-      </div>
-      <div class="grid cards">
-        <article class="card"><small>Public evidence layer</small><b>Claims with status</b><span>Public statements are organized by source quality, verification status, and publication readiness.</span></article>
-        <article class="card"><small>Credibility archive</small><b>Receipts over noise</b><span>Evidence pages, press-safe materials, and public claims are kept separate from drafts and internal notes.</span></article>
-        <article class="card"><small>Digital identity OS</small><b>Positioning with control</b><span>7YA helps manage Igor Vepretski’s public identity through clear boundaries, source discipline, and reusable trust assets.</span></article>
-      </div>
-    </section>
+    <section class="section" id="igor"><div class="head"><div><span class="eyebrow">Public profile</span><h2>Who is Igor Vepretski</h2></div><p>Short public profile only. No inflated claims, no private biography, no unsupported metrics.</p></div><div class="panel heroMain"><p class="lead">Igor Vepretski is a public-facing digital strategist and social-impact builder with a background in Israeli public safety, criminology, and digital positioning.</p><p class="muted">His public work is connected to 7YA and to StartOn, a youth-at-risk mission focused on practical technology pathways, credibility, and opportunity for young people who need structured support.</p></div></section>
 
-    <section class="section" id="status-labels">
-      <div class="head">
-        <div><span class="eyebrow">Verification language</span><h2>Evidence Status Labels</h2></div>
-        <p>These labels define how a claim can be used publicly.</p>
-      </div>
-      <div class="grid labels">
-        <article class="card statusLabel verified"><small>Verified</small><b>Confirmed public fact</b><span>Supported by an approved source and ready for public use.</span></article>
-        <article class="card statusLabel visible"><small>Source Visible</small><b>Source can be seen</b><span>A source exists or is visible, but the claim may still need capture, context, or review.</span></article>
-        <article class="card statusLabel pending"><small>Source Pending</small><b>Not final</b><span>The claim is being checked and should not be presented as settled public fact.</span></article>
-        <article class="card statusLabel internal"><small>Internal Only</small><b>Operational context</b><span>Useful for private planning, but not intended for publication.</span></article>
-        <article class="card statusLabel private"><small>Not for Publication</small><b>Do not publish</b><span>Private, sensitive, unverifiable, or inappropriate for public release.</span></article>
-      </div>
-    </section>
+    <section class="section" id="what-7ya-does"><div class="head"><div><span class="eyebrow">Operating layer</span><h2>What 7YA does</h2></div><p>7YA is not a hype page. It is a public trust and positioning layer.</p></div><div class="grid cards"><article class="card"><small>Public evidence layer</small><b>Claims with status</b><span>Public statements are organized by source quality, verification status, and publication readiness.</span></article><article class="card"><small>Credibility archive</small><b>Receipts over noise</b><span>Evidence pages, press-safe materials, and public claims are kept separate from drafts and internal notes.</span></article><article class="card"><small>Digital identity OS</small><b>Positioning with control</b><span>7YA helps manage Igor Vepretski’s public identity through clear boundaries, source discipline, and reusable trust assets.</span></article></div></section>
 
-    <section class="section" id="claims-policy">
-      <div class="head">
-        <div><span class="eyebrow">Claims policy</span><h2>Public Claims Policy</h2></div>
-        <p>The rule is intentionally simple because public trust breaks when wording outruns evidence.</p>
-      </div>
-      <div class="rule">“If a claim is not verified, it is not presented as a final public fact.”</div>
-    </section>
+    <section class="section" id="status-labels"><div class="head"><div><span class="eyebrow">Verification language</span><h2>Evidence Status Labels</h2></div><p>These labels define how a claim can be used publicly.</p></div><div class="grid labels"><article class="card statusLabel verified"><small>Verified</small><b>Confirmed public fact</b><span>Supported by an approved source and ready for public use.</span></article><article class="card statusLabel visible"><small>Source Visible</small><b>Source can be seen</b><span>A source exists or is visible, but the claim may still need capture, context, or review.</span></article><article class="card statusLabel pending"><small>Source Pending</small><b>Not final</b><span>The claim is being checked and should not be presented as settled public fact.</span></article><article class="card statusLabel internal"><small>Internal Only</small><b>Operational context</b><span>Useful for private planning, but not intended for publication.</span></article><article class="card statusLabel private"><small>Not for Publication</small><b>Do not publish</b><span>Private, sensitive, unverifiable, or inappropriate for public release.</span></article></div></section>
 
-    <section class="section" id="not-published">
-      <div class="head">
-        <div><span class="eyebrow">Publication boundary</span><h2>What we do not publish</h2></div>
-        <p>7YA separates useful operational knowledge from material that should never become public content.</p>
-      </div>
-      <div class="noPublish">
-        <h3>Excluded from public pages by default</h3>
-        <ul class="list">
-          <li>Private contacts</li>
-          <li>Family details</li>
-          <li>Sensitive internal identifiers</li>
-          <li>Unverifiable claims</li>
-          <li>Rumors</li>
-          <li>Personal material</li>
-        </ul>
-      </div>
-    </section>
+    <section class="section" id="claims-policy"><div class="head"><div><span class="eyebrow">Claims policy</span><h2>Public Claims Policy</h2></div><p>Strong framing is allowed. Unsupported certainty is not.</p></div><div class="rule">“If a claim is not verified, it is not presented as a final public fact.”</div></section>
 
-    <section class="section" id="contact">
-      <div class="cta">
-        <div>
-          <span class="eyebrow">Contact</span>
-          <h2>For partnerships, verification, media, or institutional cooperation.</h2>
-          <p class="muted">Use this page as the public trust reference before quoting, partnering, publishing, or requesting verification material.</p>
-        </div>
-        <div class="ctaBar">
-          <a class="btn alt" href="/book/">Start contact path</a>
-          <a class="btn ghost" href="/press/">Media context</a>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="not-published"><div class="head"><div><span class="eyebrow">Publication boundary</span><h2>What we do not publish</h2></div><p>7YA separates useful operational knowledge from material that should never become public content.</p></div><div class="noPublish"><h3>Excluded from public pages by default</h3><ul class="list"><li>Private contacts</li><li>Family details</li><li>Sensitive internal identifiers</li><li>Unverifiable claims</li><li>Rumors</li><li>Personal material</li></ul></div></section>
 
-    <section class="section rtl" lang="he" dir="rtl" aria-label="Hebrew readiness note">
-      <div class="panel heroMain">
-        <span class="eyebrow">עברית / EN</span>
-        <h2>מוכן לדו־לשוניות</h2>
-        <p class="muted">העמוד נבנה באנגלית ציבורית נקייה, עם תמיכה עיצובית לעברית. ניתן להוסיף בהמשך גרסה עברית מלאה בלי לשנות את מבנה האמון.</p>
-      </div>
-    </section>
+    <section class="section" id="request-verification"><div class="head"><div><span class="eyebrow">Trust intake</span><h2>Request verification</h2></div><p>For media, partners, institutions, or serious collaborators who need to check a claim before using it.</p></div><div class="intake"><div class="panel heroMain"><p class="lead">For partnerships, verification, media, or institutional cooperation.</p><p class="muted">Use this path to request source material, check a public claim, or clarify what can be quoted safely.</p><div class="ctaBar"><a class="btn alt" href="/book/">Start contact path</a><a class="btn ghost" href="/press/">Media context</a></div></div><aside class="panel heroSide"><ol class="steps"><li>Identify the claim.</li><li>Check the source status.</li><li>Approve, label, revise, or reject.</li></ol></aside></div></section>
+
+    <section class="section rtl" lang="he" dir="rtl" aria-label="Hebrew readiness note"><div class="panel heroMain"><span class="eyebrow">עברית / EN</span><h2>לא לבלף. כן להעצים.</h2><p class="muted">העמוד נבנה כדי להציג את איגור ו־7YA חזק, נקי וממלכתי — בלי מספרים מומצאים, בלי שותפויות לא מאומתות, ובלי להפוך חומר פרטי לתוכן ציבורי.</p></div></section>
   </main>
-
-  <footer class="footer">
-    <div class="wrap footin">
-      <span>7YA Trust & Evidence Brief</span>
-      <span>Evidence-first • Public-safe • No unverifiable claims</span>
-    </div>
-  </footer>
+  <footer class="footer"><div class="wrap footin"><span>7YA Trust & Evidence Brief</span><span>Evidence-first • Public-safe • Power with proof</span></div></footer>
 </body>
 </html>
