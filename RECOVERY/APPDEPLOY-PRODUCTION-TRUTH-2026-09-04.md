@@ -6,13 +6,14 @@
 
 ## Observed production truth
 
-- Canonical public hostnames: `7ya.io`, `www.7ya.io`
-- Both hostnames were observed `active` in AppDeploy custom-domain state on 2026-09-04.
+- Canonical public hostnames: `7ya.io`, `www.7ya.io`.
+- Both hostnames were re-observed `active` in AppDeploy custom-domain state after the recovery deployments on 2026-09-04.
 - Current runtime: AppDeploy app `697a008fddc309b142`.
-- Current applied AppDeploy version at this receipt: **v93 / `1788537766940`**, created 2026-09-04 19:02:46 Asia/Jerusalem.
-- Immediate rollback: **v92 / `1788537321639`**, created 2026-09-04 18:55:21 Asia/Jerusalem.
-- The remote AppDeploy source snapshot is the current source-of-runtime. It contains the full React/Vite + backend application, canonical corpus/evidence layers, multilingual routes, 100 Moments/life layers, media/archive systems, Bro Chat, QA tooling and production assets.
-- AppDeploy terminal QA after v93 reported 0 frontend errors, 0 backend errors and 0 network errors and generated fresh mobile/desktop screenshots.
+- Current applied AppDeploy version: **v93 / `1788538097106`**, created 2026-09-04 19:08:17 Asia/Jerusalem.
+- Current release marker: **`7ya-sovereign-recovery-20260904-v1`**.
+- Immediate rollback: **v92 / `1788537766940`**, created 2026-09-04 19:02:46 Asia/Jerusalem.
+- The remote AppDeploy source snapshot is the current source-of-runtime. It contains the React/Vite + backend application, canonical corpus/evidence layers, multilingual routes, 100 Moments/life layers, media/archive systems, Bro Chat, QA tooling and production assets.
+- AppDeploy terminal QA after the current v93 reported **0 frontend errors, 0 backend errors and 0 network errors** and generated fresh mobile/desktop screenshots.
 - AppDeploy did **not** report an E2E run for the current version (`e2e_tests = null`). Therefore E2E PASS must not be claimed from this receipt.
 
 ## NVIDIA / Bro Chat truth rule
@@ -23,12 +24,15 @@ Production provider order remains:
 
 Configured NVIDIA model in the recovered runtime is `nvidia/nemotron-3-super-120b-a12b`.
 
-Two production truth fixes were applied on 2026-09-04:
+The backend secret-name inventory includes `NVIDIA_API_KEY`; this proves configuration only, never execution.
 
-1. The Bro Chat UI no longer displays `NVIDIA NIM · connected` merely because an NVIDIA credential is configured. It displays NVIDIA only after the returned answer identifies its actual provider as NVIDIA.
-2. Backend status/agent semantics now distinguish **configured** from **observed execution**. Privacy-safe provider observations store only provider, model, release and timestamp after a real Bro Chat reply; they do not store the user's question or answer content for this purpose.
+Production truth fixes applied on 2026-09-04:
 
-A secret name or configuration flag is never execution proof.
+1. Bro Chat no longer displays `NVIDIA NIM · connected` merely because an NVIDIA credential is configured. It displays NVIDIA only after the returned answer identifies its actual provider as NVIDIA.
+2. Backend status/agent semantics distinguish **configured** from **observed execution**. Privacy-safe provider observations store only provider, model, release and timestamp after a real Bro Chat reply; they do not store the user's question or answer content for this purpose.
+3. Release identity was synchronized across backend, static first paint, HE/EN/RU shells, integrity gate, `release.json`, `static-health.json`, frontend runtime and test expectations. The stale 2026-09-03 release marker/date was removed from those production identity surfaces.
+
+A secret name, configuration flag, deployment READY state or source-code provider client is never execution proof.
 
 ## Source-control findings
 
@@ -55,14 +59,15 @@ AppDeploy custom-domain routing
         ↓
 app 697a008fddc309b142
         ↓
-v93 / 1788537766940
+v93 / 1788538097106
+release 7ya-sovereign-recovery-20260904-v1
         ↓
 remote AppDeploy source snapshot
 ```
 
 ## Export status
 
-The AppDeploy connector currently exposes versioned source reads/globs but no single full-repository/archive export action. The live snapshot contains 400+ source/config/public files plus binary assets. A partial copy would create another false source of truth, so **no partial root replacement was performed**.
+The AppDeploy connector currently exposes versioned source reads/globs but no single full-repository/archive export action. The live snapshot contains hundreds of source/config/public files plus binary assets. A partial copy would create another false source of truth, so **no partial root replacement was performed**.
 
 Until a byte-complete export is made and verified, the AppDeploy remote snapshot remains the authoritative source-of-runtime and this branch remains only a recovery ledger/guardrail.
 
